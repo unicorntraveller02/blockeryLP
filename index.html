@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/css/style.css">
+
+<body>
+
+    <!-- Banner -->
+    <header id="header">
+        <div class="container animate-delay">
+            <div class="banner">
+                <h1>
+                    <span>Welcome to Blockery</span>
+                    Your new home of NFT analytics. We know the NFT space can be confusing, so let’s change it.
+                </h1>
+                <a href="" class="btn">View Trending Collections</a>
+            </div>
+        </div>
+    </header>
+    <main id="main-content">
+        <!-- Section -->
+        <section class="section">
+            <div class="container animate">
+                <h2>We’re focused on</h2>
+            </div>
+            <div class="container animate">
+                <div class="cards-grid">
+                    <div class="cards">
+                        <div class="card-info">
+                            <div class="img">
+                                <img src="/images/svg1.svg" alt="">
+                            </div>
+                            <h3>Real-time pricing and analytics</h3>
+                            <p>Get the general feeling of the community by providing your own opinion below.</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-info">
+                            <div class="img">
+                                <img src="/images/svg2.svg" alt="">
+                            </div>
+                            <h3>Custom portfolio insights</h3>
+                            <p>Get the general feeling of the community by providing your own opinion below.</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-info">
+                            <div class="img">
+                                <img src="/images/svg1.svg" alt="">
+                            </div>
+                            <h3>Confidence in purchasing</h3>
+                            <p>Get the general feeling of the community by providing your own opinion below.</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-info">
+                            <div class="img">
+                                <img src="/images/svg2.svg" alt="">
+                            </div>
+                            <h3>Understand the NFT lingo</h3>
+                            <p>Get the general feeling of the community by providing your own opinion below.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End section -->
+        <!-- Section -->
+        <section class="section">
+            <div class="container animate">
+                <h2>Trending project</h2>
+            </div>
+            <div class="container animate">
+                <!-- Insert Projects here -->
+                
+            </div>
+        </section>
+
+        <!-- Section -->
+        <section class="section">
+            <div class="container animate">
+                <h2>Want to grow your project?</h2>
+            </div>
+            <div class="container animate">
+                <div class="cards-grid-lg">
+                    <div class="cards-lg">
+                        <div class="cards-img-lg">
+                            <img src="/images/screen.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cards-lg">
+                        <div class="cards-info-lg">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula sem non sodales
+                                laoreet. Nam lobortis scelerisque orci, ut dapibus arcu. In gravida nisi nec porta
+                                pharetra.</p>
+                            <p>Ut ultricies sodales tempus. Sed pellentesque euismod accumsan. Etiam sit amet quam nec
+                                leo hendrerit mattis vitae ac felis. Duis eu nulla ultricies, lacinia nisi bibendum,
+                                aliquam mauris. Nullam nec vestibulum augue, nec ultrices quam.</p>
+                            <a href="" class="btn-outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- End section -->
+    </main>
+
+    <!-- Fade-in animation script -->
+    <script>
+        const fades = document.querySelectorAll('.animate');
+        // Animation callback function
+        const fadesObserverCallback = (fadesToWatch, fadesObserver) => {
+            fadesToWatch.forEach(fadesToWatch => {
+
+                if (fadesToWatch.isIntersecting) {
+                    fadesToWatch.target.classList.add('fade');
+                    fadesObserver.unobserve(fadesToWatch.target);
+                }
+            })
+        }
+        //Animation options
+        const fadesObserverOptions = {
+            threshold: .25
+        }
+        //Animation observer
+        const fadesObserver = new IntersectionObserver(fadesObserverCallback, fadesObserverOptions);
+        fades.forEach(fades => {
+            fadesObserver.observe(fades);
+        })
+    </script>
+</body>
+
+</html>

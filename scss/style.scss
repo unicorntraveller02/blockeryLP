@@ -1,0 +1,373 @@
+// Generic
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --lightgrey: #F4F4F4;
+    --darkgrey: #eee;
+    --black: #000;
+    --white: #fff;
+    --font: 'Inter', sans-serif;
+    --border-radius: 5px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.5rem;
+    line-height: 1.167;
+    font-weight: 400;
+    font-family: var(--font);
+    background-color: var(--lightgrey);
+}
+
+p {
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+//*** Mixins ***//
+
+@mixin grid-item {
+    display: grid;
+    display: -ms-grid;
+    grid-gap: 1.2rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@mixin btn-property {
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    padding: 1.5rem 2.6rem;
+    border: 1px solid var(--black);
+    display: inline-block;
+    letter-spacing: 0.26px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+//*** Buttons ***//
+
+.btn {
+    @include btn-property;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.8rem;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: var(--black)
+    }
+}
+
+.btn-outline {
+    @include btn-property;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 1.3rem;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.04);
+        color: var(--black)
+    }
+
+}
+
+//*** Header ***//
+
+#header {
+    @include flex-item;
+    min-height: 100vh;
+    max-width: 100rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.banner {
+    h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        margin-bottom: 4rem;
+        letter-spacing: 0.6px;
+        color: var(--black);
+
+        span {
+            display: block;
+            font-size: 4.1rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #header {
+        min-height: unset;
+        margin: 10rem 0;
+    }
+
+    .banner {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+
+            span {
+                font-size: 2.6rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.section {
+    margin: 0 0 10rem 0;
+
+    h2 {
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        letter-spacing: 0.3px;
+    }
+
+    p {
+        margin-bottom: 2rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+.container {
+    padding: 0 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        margin: 0 0 6rem 0;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+//*** Cards ***//
+
+.cards-grid {
+    @include grid-item;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+
+    .cards {
+        background-color: var(--white);
+        height: 50rem;
+        padding: 3rem;
+        display: flex;
+        align-items: flex-end;
+
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 2rem 0 0.6rem 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        img {
+            max-width: 80px;
+        }
+    }
+}
+
+.cards-grid-lg {
+    @include grid-item;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+
+    .cards-lg {
+        background-color: var(--white);
+        height: 100%;
+        @include flex-item;
+
+        .cards-img-lg {
+            padding: 4rem;
+        }
+
+        .cards-info-lg {
+            padding: 8rem;
+
+            p {
+                &:last-child {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        -ms-grid-columns: 1fr;
+
+        .cards {
+            height: 30rem;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cards-grid-lg {
+        grid-template-columns: 1fr;
+        -ms-grid-columns: 1fr;
+
+        .cards-lg {
+            .cards-info-lg {
+                padding: 3rem;
+            }
+
+            .cards-img-lg {
+                padding: 2rem;
+            }
+        }
+    }
+}
+
+//*** Animation ***//
+
+// Fade in sections
+
+.animate {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.fade {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+// Header delay animation
+
+.animate-delay {
+    animation: 2s ease-out 0s 1 animationFrames;
+    -webkit-animation: 2s ease-out 0s 1 animationFrames;
+    -moz-animation: 2s ease-out 0s 1 animationFrames;
+    -o-animation: 2s ease-out 0s 1 animationFrames;
+    -ms-animation: 2s ease-out 0s 1 animationFrames;
+}
+
+@keyframes animationFrames {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes animationFrames {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animationFrames {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes animationFrames {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes animationFrames {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
