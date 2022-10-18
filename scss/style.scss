@@ -101,6 +101,43 @@ img {
 
 }
 
+//* Navigation  *//
+#navigation {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .nav-items {
+        padding: 2rem 0;
+        @include flex-item;
+        justify-content: space-between;
+
+        .nav-middle {
+            display: none;
+        }
+    }
+
+    .twitter-icon {
+        width: 34px;
+        height: 29.03px;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 37.82px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #navigation {
+        .nav-items {
+            .nav-middle {
+                display: inline-block;
+            }
+        }
+    }
+}
+
 //*** Header ***//
 
 #header {
@@ -136,6 +173,11 @@ img {
         margin: 10rem 0;
     }
 
+    .welcome-banner {
+        margin: 0 !important;
+        min-height: 100vh !important;
+    }
+
     .banner {
         h1 {
             font-size: 3rem;
@@ -146,6 +188,12 @@ img {
                 margin-bottom: 1rem;
             }
         }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .welcome-banner {
+        max-width: 110rem !important;
     }
 }
 
@@ -277,6 +325,9 @@ img {
     }
 }
 
+
+
+
 //*** Animation ***//
 
 // Fade in sections
@@ -293,13 +344,22 @@ img {
 }
 
 // Header delay animation
-
 .animate-delay {
-    animation: 2s ease-out 0s 1 animationFrames;
-    -webkit-animation: 2s ease-out 0s 1 animationFrames;
-    -moz-animation: 2s ease-out 0s 1 animationFrames;
-    -o-animation: 2s ease-out 0s 1 animationFrames;
-    -ms-animation: 2s ease-out 0s 1 animationFrames;
+    animation: 0.2s ease-out 0s 1 animationFrames;
+    -webkit-animation: 0.2s ease-out 0s 1 animationFrames;
+    -moz-animation: 0.2s ease-out 0s 1 animationFrames;
+    -o-animation: 0.2s ease-out 0s 1 animationFrames;
+    -ms-animation: 0.2s ease-out 0s 1 animationFrames;
+}
+
+@media(min-width:992px) {
+    .animate-delay {
+        animation: 2s ease-out 0s 1 animationFrames;
+        -webkit-animation: 2s ease-out 0s 1 animationFrames;
+        -moz-animation: 2s ease-out 0s 1 animationFrames;
+        -o-animation: 2s ease-out 0s 1 animationFrames;
+        -ms-animation: 2s ease-out 0s 1 animationFrames;
+    }
 }
 
 @keyframes animationFrames {
