@@ -169,8 +169,8 @@ img {
 @media screen and (max-width: 768px) {
 
     #header {
-        min-height: unset;
-        margin: 10rem 0;
+        // min-height: unset;
+        // margin: 10rem 0;
     }
 
     .welcome-banner {
@@ -333,23 +333,38 @@ img {
 // Fade in sections
 
 .animate {
+    visibility: hidden;
+    transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
 }
 
 
 .fade {
     opacity: 1;
-    transition: all 0.5s ease-in-out;
+    visibility: visible;
 }
 
 // Header delay animation
+
+.animate-n-delay {
+    animation: 0.6s ease-out 0s 1 animationFrames;
+    -webkit-animation: 0.6s ease-out 0s 1 animationFrames;
+    -moz-animation: 0.6s ease-out 0s 1 animationFrames;
+    -o-animation: 0.6s ease-out 0s 1 animationFrames;
+    -ms-animation: 0.6s ease-out 0s 1 animationFrames;
+}
+
+
 .animate-delay {
-    animation: 0.2s ease-out 0s 1 animationFrames;
-    -webkit-animation: 0.2s ease-out 0s 1 animationFrames;
-    -moz-animation: 0.2s ease-out 0s 1 animationFrames;
-    -o-animation: 0.2s ease-out 0s 1 animationFrames;
-    -ms-animation: 0.2s ease-out 0s 1 animationFrames;
+    animation: 2s ease-out 0s 1 animationFrameswoD;
+    -webkit-animation: 2s ease-out 0s 1 animationFrameswoD;
+    -moz-animation: 2s ease-out 0s 1 animationFrameswoD;
+    -o-animation: 2s ease-out 0s 1 animationFrameswoD;
+    -ms-animation: 2s ease-out 0s 1 animationFrameswoD;
 }
 
 @media(min-width:992px) {
@@ -424,6 +439,57 @@ img {
     }
 
     50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes animationFrameswoD {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes animationFrameswoD {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animationFrameswoD {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes animationFrameswoD {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes animationFrameswoD {
+    0% {
         opacity: 0;
     }
 
