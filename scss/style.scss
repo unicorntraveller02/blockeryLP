@@ -176,11 +176,12 @@ img {
     .welcome-banner {
         margin: 0 !important;
         min-height: 100vh !important;
-        .container{
+
+        .container {
             padding: 0 2rem !important;
         }
     }
-    
+
     .banner {
         h1 {
             font-size: 3rem;
@@ -450,3 +451,23 @@ img {
     }
 }
 
+
+
+/* Override Block Style */
+.MuiBox-root {
+
+    .MuiTypography-body1 {
+        font-weight: 400 !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+        font-family: Inter,Helvetica !important;
+    }
+
+    .MuiTypography-subtitle1 {
+        font-weight: 400 !important;
+        font-size: 15px !important;
+        line-height: 1.2 !important;
+        font-family: Inter,Helvetica !important;
+    }
+}
